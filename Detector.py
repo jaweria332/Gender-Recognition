@@ -17,7 +17,7 @@ import random
 epochs = 50
 lr = 1e-3
 batch_size = 64
-img_dim = (48, 48, 3)
+img_dim = (96, 96, 3)
 
 labels = []
 data = []
@@ -119,16 +119,16 @@ H = model.fit_generator(aug.flow(X_train, Y_train, batch_size=batch_size), valid
                         steps_per_epoch=len(X_train) // batch_size, epochs=epochs, verbose=1)
 
 # Saving the model for later use
-model.save('Detector.model')
+model.save('Detector')
 
 # plot training/validation loss/accuracy
 plt.style.use("ggplot")
 plt.figure()
 N = epochs
-plt.plot(np.arange(0, N), H.history["loss"], label="train_loss")
-plt.plot(np.arange(0, N), H.history["val_loss"], label="val_loss")
-plt.plot(np.arange(0, N), H.history["acc"], label="train_acc")
-plt.plot(np.arange(0, N), H.history["val_acc"], label="val_acc")
+plt.plot(np.arange(0,N),H.history["loss"],label="train_loss")
+plt.plot(np.arange(0,N),H.history["val_loss"],label="val_loss")
+plt.plot(np.arange(0,N),H.history["accuracy"],label="train_acc")
+plt.plot(np.arange(0,N),H.history["val_accuracy"],label="val_acc")
 
 plt.title("Training Loss and Accuracy")
 plt.xlabel("Number of Epochs")
