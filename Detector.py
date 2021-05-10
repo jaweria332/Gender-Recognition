@@ -119,7 +119,7 @@ H = model.fit_generator(aug.flow(X_train, Y_train, batch_size=batch_size), valid
                         steps_per_epoch=len(X_train) // batch_size, epochs=epochs, verbose=1)
 
 # Saving the model for later use
-model.save('Detector')
+model.save("Detector",save_format="h5")
 
 # plot training/validation loss/accuracy
 plt.style.use("ggplot")

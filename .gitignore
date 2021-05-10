@@ -1,0 +1,8 @@
+
+face_detector/deploy.prototxt
+face_detector/res10_300x300_ssd_iter_140000.caffemodel
+result_man.PNG
+result_man_multi.PNG
+result_woman.PNG
+result_woman_multi.PNG
+Detector
